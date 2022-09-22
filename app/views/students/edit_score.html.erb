@@ -18,8 +18,8 @@ table,th,td {
         <tr>
             <td><%= s.subject%></td>
             <td><%= s.point %></td>
-            <td><%= link_to 'Edit', "/scores/?id="+ s.id.to_s+"/edit"  %></td>
-            <td><%= link_to 'Delete', "/scores/?id="+ s.id.to_s+"/detele" %></td>
+            <td><%= link_to 'EDIT', '/scores/' + s.id.to_s + '/edit' %></td>
+            <td><%= button_to "DELETE", s, method: :delete %></td>
         </tr>
     <%end%>
 
