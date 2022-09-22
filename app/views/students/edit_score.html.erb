@@ -1,0 +1,27 @@
+<style>
+table,th,td {
+    border:2px solid black
+}
+</style>
+
+<%=  "วิชาที่คะแนนมากที่สุด :#{@maxSubject}" %>
+<br>
+<%=  "คะแนนเฉลี่ย :#{@avgScore}" %>
+
+<br><br>
+<table>
+    <th>Subject</th>
+    <th>Score</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    <% @student.scores.each do |s| %>
+        <tr>
+            <td><%= s.subject%></td>
+            <td><%= s.point %></td>
+            <td><%= link_to 'Edit', "/scores/?id="+ s.id.to_s+"/edit"  %></td>
+            <td><%= link_to 'Delete', "/scores/?id="+ s.id.to_s+"/detele" %></td>
+        </tr>
+    <%end%>
+
+
+</table>
